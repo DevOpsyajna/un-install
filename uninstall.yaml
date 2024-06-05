@@ -12,22 +12,22 @@
         @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
       when: not chocolatey_installed.stat.exists
       
-    - name: install AnyDesk
+    - name: uninstall AnyDesk
       win_chocolatey:
         name: anydesk.install
         state: absent
 
-    - name: install VLC Media Player
+    - name: uninstall VLC Media Player
       win_chocolatey:
         name: vlc
         state: absent
 
-    - name: install MobaXterm
+    - name: uninstall MobaXterm
       win_chocolatey:
         name: mobaxterm
         state: absent
 
-    - name: install Visual Studio Code
+    - name: uninstall Visual Studio Code
       win_chocolatey:
         name: vscode
         state: absent
